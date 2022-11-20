@@ -1,0 +1,14 @@
+[Unit]
+Description=MQTT To Google Form
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mqtt-to-google-form
+WorkingDirectory=/tmp
+Restart=always
+RestartSec=5
+User=nobody
+Group=nogroup

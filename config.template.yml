@@ -1,0 +1,9 @@
+# Copy to config.yml and edit
+
+mqtt:
+  broker: 'tcp://broker.hivemq.com:1883'
+
+form:
+  key: 'your-form-key'
+  eventField: 'entry.123'
+  messageField: 'entry.567'
