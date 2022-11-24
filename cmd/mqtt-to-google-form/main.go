@@ -66,7 +66,10 @@ func main() {
 
 	mqtt.WARN = log.New(os.Stdout, "WARN ", 0)
 	mqtt.ERROR = log.New(os.Stdout, "ERROR ", 0)
-	opts := mqtt.NewClientOptions().AddBroker(config.MQTT.Broker).SetClientID("ICOM-client-" + time.Now().Format("2006-01-02 15:04:05"))
+	opts := mqtt.NewClientOptions()
+	opts.AddBroker(config.MQTT.Broker)
+	opts.SetClientID("ICOM-client-" + time.Now().Format("2006-01-02 15:04:05"))
+	opts.SetConnectRetry(true)
 	opts.SetDefaultPublishHandler(onMessage)
 
 	c := mqtt.NewClient(opts)
